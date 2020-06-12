@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment, useState } from 'react';
+import Header from './components/Header.js';
+import Formulario from './components/Formulario.js';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+	//Definir el state(Estos son globales ya que son usados  por diferentes componentes)
+	//Variable--Funcion--------------------Valor inicial del state
+	const [cantidad, guardarCantidad] = useState(0);
+	const [plazo, guardarPlazo] = useState('');	
+	return (
+		<Fragment>
+			<Header 
+				titulo="Cotizador de prestamos" //propiedad=valor. Estos se pasan como parametros en el componente
+				// descripcion="Ingresa los datos para obtener una cotización."
+			/>
+			<div className="container">
+				<Formulario 
+					cantidad={cantidad}
+					guardarCantidad={guardarCantidad}
+					plazo={plazo}
+					guardarPlazo={guardarPlazo}
+				/>
+			</div>
+		</Fragment>
+	);
 }
 
 export default App;
