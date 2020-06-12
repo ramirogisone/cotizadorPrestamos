@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 
 /* function Header({titulo}){
 	//lo que se coloca antes del return puede ser codigo estandar JS
